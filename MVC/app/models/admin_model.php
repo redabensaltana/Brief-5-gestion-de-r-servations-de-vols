@@ -15,7 +15,7 @@ class admin_model extends Connection{
         $this->connection()->query($sql);
     }
 
-    public function editflight($departure,$destination,$direction_type,$depart_date,$return_date,$seats,$price){
+    public function editflight($departure,$destination,$direction_type,$depart_date,$return_date,$seats,$price,$id){
         $sql = "UPDATE flight SET departure ='$departure' , destination='$destination' , direction_type= '$direction_type' , depart_date='$depart_date' , return_date='$return_date' , seats='$seats' , price='$price' WHERE id = '$id' ;";
         $this->connection()->query($sql);
     }

@@ -92,7 +92,13 @@
               
             <form action="<?= URL ?>/admin_controller/edit_flight" method="post">
               <input name="id" type="hidden" value="<?=$info['id']?>">
-              
+              <input name="departure" type="hidden" value="<?=$info['departure']?>">
+              <input name="destination" type="hidden" value="<?=$info['destination']?>">
+              <input name="type" type="hidden" value="<?=$info['direction_type']?>">
+              <input name="departdate" type="hidden" value="<?=$info['depart_date']?>">
+              <input name="returndate" type="hidden" value="<?=$info['return_date']?>">
+              <input name="seats" type="hidden" value="<?=$info['seats']?>">
+              <input name="price" type="hidden" value="<?=$info['price']?>">
               <button type="submit" class="btn btn-success btn-sm">update</button> 
             </form>
               

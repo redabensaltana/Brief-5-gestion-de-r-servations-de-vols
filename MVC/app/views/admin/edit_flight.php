@@ -49,37 +49,37 @@
           <form class="row g-3" action="<?= URL ?>/admin_controller/edit_flight_db" method="post">
           <div class="col-md-6">
             <label for="departure" class="form-label">Departure</label>
-            <input name="departure" type="text" class="form-control" id="departure">
+            <input name="departure" type="text" class="form-control" id="departure" value="<?= $_POST['departure'] ?>">
           </div>
           <div class="col-md-6">
             <label for="destination" class="form-label">Destination</label>
-            <input name="destination" type="text" class="form-control" id="destination">
+            <input name="destination" type="text" class="form-control" id="destination" value="<?= $_POST['destination'] ?>">
           </div>
           <div class="col-12">
             <label for="type" class="form-label">Flight type</label>
-            <select name="type" class="form-select" id="type" value="">
-              <option selected>Choose the type..</option>
-              <option>one-way</option>
-              <option>round-trip</option>
+            <select name="type" class="form-select" id="type" value="<?= $_POST['type'] ?>">
+              <option value="Choose the type..">Choose the type..</option>
+              <option value="one-way">one-way</option>
+              <option value="round-trip">round-trip</option>
             </select>
           </div>
           <div class="col-6">
             <label for="departdate" class="form-label">Depart date</label>
-            <input name="departdate" type="date" class="form-control" id="departdate">
+            <input name="departdate" type="date" class="form-control" id="departdate" value="<?= $_POST['departdate'] ?>">
           </div>
           <div class="col-md-6">
             <label for="returndate" class="form-label">Return date</label>
-            <input name="returndate" type="date" class="form-control" id="returndate">
+            <input name="returndate" type="date" class="form-control" id="returndate" value="<?= $_POST['returndate'] ?>">
           </div>
           <div class="col-md-6">
             <label for="seats" class="form-label">Seats</label>
-            <input name="seats" type="number" id="seats" class="form-control">
+            <input name="seats" type="number" id="seats" class="form-control" value="<?= $_POST['seats'] ?>">
           </div>
           <div class="col-md-6">
             <label for="price" class="form-label">Price</label>
-            <input name="price" type="number" class="form-control" id="price">
+            <input name="price" type="number" class="form-control" id="price" value="<?= $_POST['price'] ?>">
           </div>
-          
+          <input type="hidden" name="id" value="<?= $_POST['id'] ?>">
           <div class="col-12 mt-5 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary btn-lg">Done</button>
           </div>

@@ -57,10 +57,10 @@
           </div>
           <div class="col-12">
             <label for="type" class="form-label">Flight type</label>
-            <select name="type" class="form-select" id="type" value="">
-              <option selected>Choose the type..</option>
-              <option>one-way</option>
-              <option>round-trip</option>
+            <select name="type" class="form-select" id="type">
+              <option value="Choose the type..">Choose the type..</option>
+              <option value="one-way">one-way</option>
+              <option value="round-trip">round-trip</option>
             </select>
           </div>
           <div class="col-6">

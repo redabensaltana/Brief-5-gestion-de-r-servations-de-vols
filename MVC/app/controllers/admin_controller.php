@@ -29,7 +29,7 @@ class admin_controller extends Controller{
     }
 
     public function edit_flight(){
-    $this->view('admin/edit_flight',);
+    $this->view('admin/edit_flight',$_POST);
     }
 
     public function edit_flight_db(){
@@ -40,9 +40,10 @@ class admin_controller extends Controller{
         $this->returndate = $_POST['returndate'];
         $this->seats = $_POST['seats'];
         $this->price = $_POST['price'];
+        $this->id = $_POST['id'];
 
         $this->model = $this->model('admin_model');
-        $this->model->editflight($this->departure,$this->destination,$this->type,$this->departdate,$this->returndate,$this->seats,$this->price);
+        $this->model->editflight($this->departure,$this->destination,$this->type,$this->departdate,$this->returndate,$this->seats,$this->price,$this->id);
 
         // $this->flights();
         header('Location:http://localhost/MVC/public/admin_controller/flights');
