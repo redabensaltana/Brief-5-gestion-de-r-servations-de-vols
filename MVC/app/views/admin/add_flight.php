@@ -58,16 +58,15 @@
           <div class="col-12">
             <label for="type" class="form-label">Flight type</label>
             <select name="type" class="form-select" id="type">
-              <option value="Choose the type..">Choose the type..</option>
-              <option value="one-way">one-way</option>
-              <option value="round-trip">round-trip</option>
+              <option value="1">Round-trip</option>
+              <option value="2">One-way</option>
             </select>
           </div>
-          <div class="col-6">
+          <div class="col-md-6 expandable">
             <label for="departdate" class="form-label">Depart date</label>
             <input name="departdate" type="date" class="form-control" id="departdate">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 removable">
             <label for="returndate" class="form-label">Return date</label>
             <input name="returndate" type="date" class="form-control" id="returndate">
           </div>
@@ -85,6 +84,27 @@
           </div>
         </form>
     </div>
+
+    <script>
+      var removable = document.querySelector('.removable')
+      var flight_type = document.getElementById('type')
+      var expandable = document.querySelector('.expandable')
+
+      flight_type.addEventListener('change',function(){
+          if(flight_type.value == '2'){
+              expandable.classList.remove("col-md-6");
+              expandable.classList.add("col-12");
+              removable.classList.add("d-none");
+              removable.classList.remove("d-block");
+          }else if(flight_type.value == '1'){
+              expandable.classList.remove("col-12");
+              expandable.classList.add("col-md-6");
+              removable.classList.add("d-block");
+              removable.classList.remove("d-none");
+          } 
+      })
+
+    </script>
 
 </body>
 </html>
