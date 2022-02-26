@@ -113,12 +113,12 @@ class sign_controller extends Controller {
                 elseif(!empty($user)){
                 //   echo "hello world";
                 //     return;
-                    session_start();
+                    
                     $_SESSION['iduser']=$user['id'];
                     header('location:' . URL . '/user_controller/flights');
                 }
                 elseif(!empty($admin)){
-                    session_start();
+                    
                     $_SESSION['idadmin']=$admin['id'];
                     header('location:' . URL . '/admin_controller/flights');
                 }

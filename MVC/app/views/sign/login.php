@@ -9,6 +9,15 @@
 
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <img class="navbar-brand" src="<?= URL ?>/logo/logo.png" style="height:60px">
+
+        </div>
+        </div>
+    </nav>
+    
 <form action="<?= URL ?>/sign_controller/login" method="post">
 
 <section class="vh-100" style="background-color: #4259C3;">
