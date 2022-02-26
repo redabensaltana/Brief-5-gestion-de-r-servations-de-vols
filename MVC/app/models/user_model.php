@@ -20,4 +20,5 @@ class user_model extends Connection
     {
         $this->connection()->query("UPDATE `flight` SET `seats` = seats - '$seatstoremove' WHERE `id` = '$id_flight';");
     }
+
 }

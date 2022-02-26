@@ -58,25 +58,31 @@
     </form>
 
     <script>
+        var avseats = <?= $_POST['seats'] ?>;
         var bigcontainer = document.getElementById('bigcontainer');
         var passengernum = 0;
+
         function addpassenger() {
-            passengernum ++;
-            bigcontainer.innerHTML += `
-            <div class='border border-3 rounded-3 p-3 mb-3'>
-                <h2 class='fs-5 mb-4'>Passenger #${passengernum}</h2>
-                <div class='row'>
-                    <div class='col-md-4 mb-3'>
-                        <input class='form-control form-control-md ' type='text' placeholder='Firstname' name='firstname[]'>
+
+            if (avseats > passengernum) {
+                passengernum++;
+                bigcontainer.innerHTML += `
+                <div class='border border-3 rounded-3 p-3 mb-3'>
+                    <h2 class='fs-5 mb-4'>Passenger #${passengernum}</h2>
+                    <div class='row'>
+                        <div class='col-md-4 mb-3'>
+                            <input class='form-control form-control-md ' type='text' placeholder='Firstname' name='firstname[]'>
+                        </div>
+                        <div class='col-md-4 mb-3'>
+                            <input class='form-control form-control-md ' type='text' placeholder='Lastname' name='lastname[]'>
+                        </div>
+                        <div class='col-md-4 mb-3'>
+                            <input class='form-control form-control-md ' type='number' placeholder='Age' name='age[]'>
+                        </div>
                     </div>
-                    <div class='col-md-4 mb-3'>
-                        <input class='form-control form-control-md ' type='text' placeholder='Lastname' name='lastname[]'>
-                    </div>
-                    <div class='col-md-4 mb-3'>
-                        <input class='form-control form-control-md ' type='age' placeholder='Age' name='age[]'>
-                    </div>
-                </div>
-            </div>`;
+                </div>`;
+            }
+
         }
     </script>
 

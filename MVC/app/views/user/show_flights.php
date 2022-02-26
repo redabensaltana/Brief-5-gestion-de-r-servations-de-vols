@@ -43,7 +43,7 @@
         </div>
         <div class="p-2">
           <h2 class='fs-5'>Return date</h2>
-          <div><?= $info['return_date'] ?></div>
+          <div class="returndate"><?= $info['return_date'] ?></div>
         </div>
         <div class="p-2">
           <h2 class='fs-5'>Seats</h2>
@@ -56,6 +56,7 @@
 
         <form action="<?= URL ?>/user_controller/booking" method="post">
           <input name="id" type="hidden" value="<?= $info['id'] ?>">
+          <input name="seats" type="hidden" value="<?= $info['seats'] ?>">
           <button type="submit" class="btn btn-success btn-lg mt-3">book</button>
         </form>
 
@@ -63,6 +64,16 @@
     <?php endforeach; ?>
 
   </section>
+      
+  <script>
+      var returndate = document.querySelectorAll('.returndate');
+      returndate.forEach(e => {
+        if(e.innerText == "0000-00-00"){
+          e.innerText = "no return";
+      }
+      });
+      
+  </script>
 
 </body>
 
