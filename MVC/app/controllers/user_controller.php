@@ -37,4 +37,11 @@ class user_controller extends Controller
 
         header('location:' . URL . '/user_controller/flights');
     }
+
+    public function bookings()
+    {
+        $this->model = $this->model('user_model');
+        $data = $this->model->getbookings($_SESSION['iduser']);
+        $this->view('user/show_bookings', ['show_bookings_user' => $data]);
+    }
 }

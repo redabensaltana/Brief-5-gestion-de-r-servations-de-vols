@@ -13,11 +13,15 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light container-fluid d-flex justify-content-between" style="background-color: #e3f2fd;">
+        <div class="d-flex">
             <img class="navbar-brand" src="<?= URL ?>/logo/logo.png" style="height:60px">
-
+            <h2 class="mt-2 text-center" style="color:#142a5c;">flygoo</h2>
         </div>
+
+        <div class="d-flex px-3">
+            <a class="nav-item nav-link text-dark" href="<?= URL ?>/user_controller/flights">flights</a>
+            <a class="nav-item nav-link text-dark" href="<?= URL ?>/user_controller/bookings">bookings</a>
         </div>
     </nav>
 
