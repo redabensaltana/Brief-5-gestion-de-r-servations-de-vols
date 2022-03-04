@@ -74,8 +74,8 @@
           <div>< ?= $info['price'] ?>$</div>
         </div> -->
 
-        <form action="" method="post">
-          <!-- <input name="id" type="hidden" value="< ?= $info['id'] ?>"> -->
+        <form action="<?= URL ?>/user_controller/deletebooking" method="post">
+          <input name="id" type="hidden" value="<?= $info['id'] ?>">
           <button type="submit" class="btn btn-danger btn-lg mt-3">delete</button>
         </form>
         

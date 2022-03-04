@@ -24,6 +24,11 @@
     </div>
   </nav>
 
+  <div>
+    <img src="<?= URL ?>/img/pexels-pascal-renet-113017.jpg" class="img-fluid" alt="what s wrong">
+    <h1 style="position:absolute;top:400px;left:35%;font-size:100px;">Fly everywhere</h1>
+  </div>
+
   <section class="container mt-5">
 
     <?php foreach ($data['show_flights_user'] as $info) : ?>
@@ -73,6 +78,7 @@
     <?php endforeach; ?>
 
   </section>
+  
 
   <script>
     var returndate = document.querySelectorAll('.returndate');

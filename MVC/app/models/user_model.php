@@ -33,4 +33,8 @@ class user_model extends Connection
         // $result = $this->connection()->query("SELECT booking(*),flight.departure,flight.destination,flight.direction_type,flight.depart_date,flight.return_date JOIN flight on booking.id_user = '$id_user';");
         return $result;
     }
+
+    public function deletebooking($id){
+        $this->connection()->query("DELETE FROM `booking` WHERE `id` = '$id';");
+    }
 }

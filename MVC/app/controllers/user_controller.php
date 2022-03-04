@@ -3,6 +3,8 @@
 class user_controller extends Controller
 {
 
+    // public $groupbookingid = 0;
+
     public function flights()
     {
         $this->model = $this->model('user_model');
@@ -19,6 +21,7 @@ class user_controller extends Controller
     {
         $this->model = $this->model('user_model');
 
+        // $this->groupbookingid++;
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $age = $_POST['age'];
@@ -61,5 +64,17 @@ class user_controller extends Controller
         $this->model = $this->model('user_model');
         $data = $this->model->getbookings($_SESSION['iduser']);
         $this->view('user/show_bookings', ['show_bookings_user' => $data]);
+    }
+
+    public function deletebooking(){
+        $this->model = $this->model('user_model');
+        $id = $_POST['id'];
+
+        // echo"<pre>";
+        // print_r($_POST);
+        // return;
+
+        $this->model->deletebooking($id);  
+        header('location:' . URL . '/user_controller/bookings');
     }
 }
