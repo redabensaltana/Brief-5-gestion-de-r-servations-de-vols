@@ -24,7 +24,7 @@ class user_controller extends Controller
         $age = $_POST['age'];
         // ?:::::::::::::::::::::::::::::::::::::::::::::::::
         $departure = $_POST['departure'];
-        $destination = $_POST['departure'];
+        $destination = $_POST['destination'];
         $directiontype = $_POST['directiontype'];
         $departdate = $_POST['departdate'];
         $returndate = $_POST['returndate'];

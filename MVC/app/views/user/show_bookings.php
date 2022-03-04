@@ -45,6 +45,22 @@
           <h2 class='fs-5'>age</h2>
           <div><?= $info['age'] ?></div>
         </div>
+        <form action="" method="post">
+          <!-- <input name="id" type="hidden" value="< ?= $info['id'] ?>"> -->
+          <button type="submit" class="btn btn-info btn-lg mt-3">edit info</button>
+        </form>
+        <div class="p-2">
+          <h2 class='fs-5'>Departure</h2>
+          <div><?= $info['departure'] ?></div>
+        </div>
+        <div class="p-2">
+          <h2 class='fs-5'>Destination</h2>
+          <div><?= $info['destination'] ?></div>
+        </div>
+        <div class="p-2">
+          <h2 class='fs-5'>Date</h2>
+          <div><?= $info['date'] ?></div>
+        </div>
         <!-- <div class="p-2">
           <h2 class='fs-5'>ID flight</h2>
           <div>< ?= $info['id_flight'] ?></div>
@@ -58,10 +74,11 @@
           <div>< ?= $info['price'] ?>$</div>
         </div> -->
 
-        <form action="<?= URL ?>/user_controller/booking" method="post">
-          <input name="id" type="hidden" value="<?= $info['id'] ?>">
-          <button type="submit" class="btn btn-success btn-lg mt-3">book</button>
+        <form action="" method="post">
+          <!-- <input name="id" type="hidden" value="< ?= $info['id'] ?>"> -->
+          <button type="submit" class="btn btn-danger btn-lg mt-3">delete</button>
         </form>
+        
 
       </div>
     <?php endforeach; ?>
