@@ -61,6 +61,11 @@
         <form action="<?= URL ?>/user_controller/booking" method="post">
           <input name="id" type="hidden" value="<?= $info['id'] ?>">
           <input name="seats" type="hidden" value="<?= $info['seats'] ?>">
+          <input name="departure" type="hidden" value="<?= $info['departure'] ?>">
+          <input name="destination" type="hidden" value="<?= $info['destination'] ?>">
+          <input name="directiontype" type="hidden" value="<?= $info['direction_type'] ?>">
+          <input name="departdate" type="hidden" value="<?= $info['depart_date'] ?>">
+          <input name="returndate" type="hidden" value="<?= $info['return_date'] ?>">
           <button type="submit" class="btn btn-success btn-lg mt-3">book</button>
         </form>
 

@@ -22,18 +22,36 @@ class user_controller extends Controller
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $age = $_POST['age'];
+        // ?:::::::::::::::::::::::::::::::::::::::::::::::::
+        $departure = $_POST['departure'];
+        $destination = $_POST['departure'];
+        $directiontype = $_POST['directiontype'];
+        $departdate = $_POST['departdate'];
+        $returndate = $_POST['returndate'];
+        // ?:::::::::::::::::::::::::::::::::::::::::::::::::
         $id_flight = $_POST['idflight'];
         $id_user = $_SESSION['iduser'];
         $i = 0;
 
         $seatstoremove = count($firstname);
 
-        foreach ($firstname as $fname) {
-            $this->model->addbooking($fname, $lastname[$i], $age[$i], $id_flight, $id_user);
-            $i++;
+        if ($directiontype == "one-way") {
+
+            foreach ($firstname as $fname) {
+                $this->model->addbooking($fname, $lastname[$i], $age[$i], $departure, $destination, $departdate, $id_flight, $id_user);
+                $i++;
+            }
+            $this->model->deleteseats($seatstoremove, $id_flight);
+        } elseif ($directiontype == "round-trip") {
+
+            foreach ($firstname as $fname) {
+                $this->model->addbookingtwice($fname, $lastname[$i], $age[$i], $departure, $destination, $departdate, $returndate, $id_flight, $id_user);
+                $i++;
+            }
+            $this->model->deleteseats($seatstoremove, $id_flight);
+            
         }
 
-        $this->model->deleteseats($seatstoremove, $id_flight);
 
         header('location:' . URL . '/user_controller/flights');
     }

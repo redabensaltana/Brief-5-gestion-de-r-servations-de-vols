@@ -53,6 +53,11 @@
             </div>
 
             <input name="idflight" type="hidden" value="<?= $_POST['id'] ?>">
+            <input name="departure" type="hidden" value="<?= $_POST['departure'] ?>">
+            <input name="destination" type="hidden" value="<?= $_POST['destination'] ?>">
+            <input name="directiontype" type="hidden" value="<?= $_POST['directiontype'] ?>">
+            <input name="departdate" type="hidden" value="<?= $_POST['departdate'] ?>">
+            <input name="returndate" type="hidden" value="<?= $_POST['returndate'] ?>">
 
             <div class="col-md-12 mt-4 d-flex justify-content-center">
                 <button type="submit" style="width: 150px;" class="btn btn-lg btn-success">Validate</button>

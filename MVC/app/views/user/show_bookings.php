@@ -29,10 +29,10 @@
     <?php foreach ($data['show_bookings_user'] as $info) : ?>
 
       <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 rounded-3 bg-light p-3 mb-5">
-        <div class="p-2">
+        <!-- <div class="p-2">
           <h2 class='fs-5'>id</h2>
-          <div><?= $info['id'] ?></div>
-        </div>
+          <div>< ?= $info['id'] ?></div>
+        </div> -->
         <div class="p-2">
           <h2 class='fs-5'>firstname</h2>
           <div><?= $info['firstname'] ?></div>
@@ -45,14 +45,14 @@
           <h2 class='fs-5'>age</h2>
           <div><?= $info['age'] ?></div>
         </div>
-        <div class="p-2">
+        <!-- <div class="p-2">
           <h2 class='fs-5'>ID flight</h2>
-          <div class="returndate"><?= $info['id_flight'] ?></div>
+          <div>< ?= $info['id_flight'] ?></div>
         </div>
         <div class="p-2">
           <h2 class='fs-5'>ID user</h2>
-          <div><?= $info['id_user'] ?></div>
-        </div>
+          <div>< ?= $info['id_user'] ?></div>
+        </div> -->
         <!-- <div class="p-2">
           <h2 class='fs-5'>Price</h2>
           <div>< ?= $info['price'] ?>$</div>
