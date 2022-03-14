@@ -22,6 +22,9 @@
         <div class="d-flex px-3">
             <a class="nav-item nav-link text-dark" href="<?= URL ?>/user_controller/flights">flights</a>
             <a class="nav-item nav-link text-dark" href="<?= URL ?>/user_controller/bookings">bookings</a>
+            <form action="<?= URL ?>/sign_controller/logout" method="post">
+            <button class="btn btn-dark rounded" type="submit">logout<i class="fas fa-sign-out-alt ms-2"></i></button>
+            </form>
         </div>
     </nav>
 

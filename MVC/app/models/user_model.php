@@ -18,8 +18,12 @@ class user_model extends Connection
 
     public function addbookingtwice($firstname, $lastname, $age, $departure, $destination, $departdate, $returndate, $id_flight, $id_user)
     {
-        $this->connection()->query("INSERT INTO `booking` (`firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$firstname', '$lastname', '$age','$departure','$destination','$departdate', '$id_flight', '$id_user');");
-        $this->connection()->query("INSERT INTO `booking` (`firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$firstname', '$lastname', '$age','$destination','$departure','$returndate', '$id_flight', '$id_user');");
+        $res = $this->connection()->query("SELECT max(`id`) as lastid FROM `booking`;");
+        $lastrecord = $res->fetch_assoc()['lastid'];
+        $lastrecord++;
+        $this->connection()->query("INSERT INTO `booking` (`id_res`, `firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$lastrecord', '$firstname', '$lastname', '$age','$departure','$destination','$departdate', '$id_flight', '$id_user');");
+        $this->connection()->query("INSERT INTO `booking` (`id_res`, `firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$lastrecord', '$firstname', '$lastname', '$age','$destination','$departure','$returndate', '$id_flight', '$id_user');");
+        // $this->connection()->query("UPDATE booking SET `id` ='$lastrecord';");
     }
     
     public function deleteseats($seatstoremove, $id_flight)
@@ -34,7 +38,11 @@ class user_model extends Connection
         return $result;
     }
 
-    public function deletebooking($id){
-        $this->connection()->query("DELETE FROM `booking` WHERE `id` = '$id';");
+    public function deletebooking($id_res){
+        $this->connection()->query("DELETE FROM `booking` WHERE `id_res` = '$id_res';");
+    }
+    public function editbooking($id_res,$firstname,$lastname,$age){
+        $sql = "UPDATE booking SET firstname ='$firstname' , lastname='$lastname' , age= '$age' WHERE id_res = '$id_res' ;";
+        $this->connection()->query($sql);
     }
 }

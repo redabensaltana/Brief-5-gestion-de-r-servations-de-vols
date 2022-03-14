@@ -52,7 +52,6 @@ class user_controller extends Controller
                 $i++;
             }
             $this->model->deleteseats($seatstoremove, $id_flight);
-            
         }
 
 
@@ -66,15 +65,42 @@ class user_controller extends Controller
         $this->view('user/show_bookings', ['show_bookings_user' => $data]);
     }
 
-    public function deletebooking(){
+    public function deletebooking()
+    {
         $this->model = $this->model('user_model');
-        $id = $_POST['id'];
+        $id_res = $_POST['id_res'];
 
         // echo"<pre>";
-        // print_r($_POST);
+        // print_r($id_res);
         // return;
 
-        $this->model->deletebooking($id);  
+        $this->model->deletebooking($id_res);
+        header('location:' . URL . '/user_controller/bookings');
+    }
+
+    public function editbookingform()
+    {
+        $firstname = $_POST['firstname'];
+        $id_res = $_POST['id_res'];
+        $lastname = $_POST['lastname'];
+        $age = $_POST['age'];
+        $this->view('user/editbooking');
+    }
+
+    public function editbooking()
+    {
+        $this->model = $this->model('user_model');
+
+        $firstname = $_POST['firstname'];
+        $id_res = $_POST['id_res'];
+        $lastname = $_POST['lastname'];
+        $age = $_POST['age'];
+
+        // echo"<pre>";
+        // print_r($id_res);
+        // return;
+
+        $this->model->editbooking($id_res,$firstname,$lastname,$age);
         header('location:' . URL . '/user_controller/bookings');
     }
 }
