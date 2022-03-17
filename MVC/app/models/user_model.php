@@ -13,7 +13,10 @@ class user_model extends Connection
 
     public function addbooking($firstname, $lastname, $age, $departure, $destination, $departdate, $id_flight, $id_user)
     {
-        $this->connection()->query("INSERT INTO `booking` (`firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$firstname', '$lastname', '$age','$departure','$destination','$departdate', '$id_flight', '$id_user');");
+        $res = $this->connection()->query("SELECT max(`id`) as lastid FROM `booking`;");
+        $lastrecord = $res->fetch_assoc()['lastid'];
+        $lastrecord++;
+        $this->connection()->query("INSERT INTO `booking` (`id_res`, `firstname`, `lastname`, `age`,`departure`,`destination`,`date`,`id_flight`, `id_user`) VALUES ('$lastrecord','$firstname', '$lastname', '$age','$departure','$destination','$departdate', '$id_flight', '$id_user');");
     }
 
     public function addbookingtwice($firstname, $lastname, $age, $departure, $destination, $departdate, $returndate, $id_flight, $id_user)

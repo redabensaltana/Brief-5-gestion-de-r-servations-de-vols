@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+if( empty($_SESSION['idadmin'])){
+    header('location:' . URL . '/sign_controller/loginform');
+ }
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
