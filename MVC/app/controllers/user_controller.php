@@ -69,12 +69,14 @@ class user_controller extends Controller
     {
         $this->model = $this->model('user_model');
         $id_res = $_POST['id_res'];
+        $id_flight = $_POST['id_flight'];
 
         // echo"<pre>";
         // print_r($id_res);
         // return;
 
         $this->model->deletebooking($id_res);
+        $this->model->addseat($id_flight);
         header('location:' . URL . '/user_controller/bookings');
     }
 

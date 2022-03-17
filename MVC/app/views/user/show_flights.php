@@ -28,9 +28,9 @@
     </div>
   </nav>
 
-  <div>
-    <img src="<?= URL ?>/img/pexels-pascal-renet-113017.jpg" class="img-fluid" alt="what s wrong">
-    <h1 style="position:absolute;top:400px;left:35%;font-size:100px;">Fly everywhere</h1>
+  <div class="position-relative" >
+    <img src="<?= URL ?>/img/pexels-pascal-renet-113017.jpg" class="img-fluid" style="filter: brightness(0.6);" alt="what s wrong">
+    <h1 class="position-absolute top-50 start-50 translate-middle text-light display-1 fw-bold">Fly everywhere</h1>
   </div>
 
   <section class="container mt-5">

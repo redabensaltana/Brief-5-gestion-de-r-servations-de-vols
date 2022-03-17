@@ -27,7 +27,7 @@
       </form>
     </div>
   </nav>
-
+  <h2 class="text-center mt-5" style="font-size:50px;">My bookings</h2>
   <section class="container mt-5">
 
     <?php foreach ($data['show_bookings_user'] as $info) : ?>
@@ -49,13 +49,7 @@
           <h2 class='fs-5'>age</h2>
           <div><?= $info['age'] ?></div>
         </div>
-        <form action="<?= URL ?>/user_controller/editbookingform" method="post">
-          <input name="id_res" type="hidden" value="<?= $info['id_res'] ?>">
-          <input name="firstname" type="hidden" value="<?= $info['firstname'] ?>">
-          <input name="lastname" type="hidden" value="<?= $info['lastname'] ?>">
-          <input name="age" type="hidden" value="<?= $info['age'] ?>">
-          <button type="submit" class="btn btn-info btn-lg mt-3">edit info</button>
-        </form>
+        
         <div class="p-2">
           <h2 class='fs-5'>Departure</h2>
           <div><?= $info['departure'] ?></div>
@@ -80,9 +74,16 @@
           <h2 class='fs-5'>Price</h2>
           <div>< ?= $info['price'] ?>$</div>
         </div> -->
-
+        <form action="<?= URL ?>/user_controller/editbookingform" method="post">
+          <input name="id_res" type="hidden" value="<?= $info['id_res'] ?>">
+          <input name="firstname" type="hidden" value="<?= $info['firstname'] ?>">
+          <input name="lastname" type="hidden" value="<?= $info['lastname'] ?>">
+          <input name="age" type="hidden" value="<?= $info['age'] ?>">
+          <button type="submit" class="btn btn-info btn-lg mt-3">edit info</button>
+        </form>
         <form action="<?= URL ?>/user_controller/deletebooking" method="post">
           <input name="id_res" type="hidden" value="<?= $info['id_res'] ?>">
+          <input name="id_flight" type="hidden" value="<?= $info['id_flight'] ?>">
           <button type="submit" class="btn btn-danger btn-lg mt-3">delete</button>
         </form>
 
